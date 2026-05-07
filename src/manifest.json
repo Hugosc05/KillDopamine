@@ -9,11 +9,21 @@
       "*://*.x.com/*",
       "*://*.instagram.com/*"
     ],
-    "background": {
-      "service_worker": "background/background.js"
+    "icons": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
     },
     "action": {
-      "default_popup": "popup/popup.html"
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+      }
+    },
+    "background": {
+      "service_worker": "background/background.js"
     },
     "content_scripts": [
       {
@@ -25,5 +35,11 @@
         "js": ["content/content.js"],
         "css": ["content/styles.css"]
       }
-    ]
+    ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "frenofriccion@tu-usuario.github.io",
+        "strict_min_version": "109.0"
+      }
+    }
   }
