@@ -1,4 +1,4 @@
-# 🛑 Freno de Fricción (Anti-Doomscrolling)
+# 🛑 Kill Dopamine (Anti-Doomscrolling)
 
 Una extensión de navegador ligera que combate el *doomscrolling* inyectando "fricción" progresiva en las redes sociales. 
 
@@ -15,7 +15,7 @@ En lugar de bloquear sitios web de forma estricta (lo cual genera frustración y
 
 Actualmente el proyecto está en fase de desarrollo. Para probarlo en tu navegador:
 
-1. Clona este repositorio: `git clone https://github.com/TU_USUARIO/freno-friccion.git`
+1. Clona este repositorio: `git clone https://github.com/Hugosc05/KillDopamine.git`
 2. Abre Google Chrome o un navegador basado en Chromium y ve a `chrome://extensions/`.
 3. Activa el **Modo de desarrollador** (esquina superior derecha).
 4. Haz clic en **Cargar descomprimida** y selecciona la carpeta `src` de este repositorio.
