@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2 id="ui-title">Configuración</h2>
+    
+    <div class="settings-group">
+      <label>
+        <span id="ui-lang">Idioma:</span>
+        <select id="lang">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <span id="ui-stage1">Nivel 1 (minutos):</span>
+        <input type="number" id="stage1" min="1" max="120">
+      </label>
+      <label>
+        <span id="ui-stage2">Nivel 2 (minutos):</span>
+        <input type="number" id="stage2" min="1" max="120">
+      </label>
+      <label>
+        <span id="ui-stage3">Nivel 3 (minutos):</span>
+        <input type="number" id="stage3" min="1" max="120">
+      </label>
+    </div>
+
+    <div class="action-buttons">
+      <button id="saveBtn" class="btn-primary">Guardar</button>
+      <button id="resetBtn" class="btn-secondary">Resetear Contador</button>
+    </div>
+    
+    <div id="status" class="hidden"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Freno de Fricción",
+    "version": "1.0",
+    "description": "Añade fricción progresiva a redes sociales para reducir el doomscrolling.",
+    "permissions": ["tabs", "storage"],
+    "host_permissions": [
+      "*://*.twitter.com/*",
+      "*://*.x.com/*",
+      "*://*.instagram.com/*"
+    ],
+    "background": {
+      "service_worker": "background/background.js"
+    },
+    "action": {
+      "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.twitter.com/*",
+          "*://*.x.com/*",
+          "*://*.instagram.com/*"
+        ],
+        "js": ["content/content.js"],
+        "css": ["content/styles.css"]
+      }
+    ]
+  }
