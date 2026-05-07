@@ -1,15 +1,18 @@
-.friction-stage-1 {
+html.friction-stage-1 {
     filter: saturate(0.6) !important;
     transition: filter 3s ease-in-out;
   }
   
-  .friction-stage-2 {
+  html.friction-stage-2 {
     filter: saturate(0.2) contrast(0.9) !important;
     transition: filter 3s ease-in-out;
   }
   
-  .friction-stage-3 {
+  html.friction-stage-3,
+  html.friction-stage-3 body {
     filter: grayscale(1) opacity(0.85) !important;
     pointer-events: none !important;
+    overflow: hidden !important;
+    height: 100vh !important;
     transition: filter 3s ease-in-out, opacity 3s ease-in-out;
   }

@@ -1,11 +1,13 @@
 const activeTabs = {};
 
 chrome.tabs.onActivated.addListener(activeInfo => {
-  activeTabs[activeInfo.tabId] = Date.now();
+  if (!activeTabs[activeInfo.tabId]) {
+    activeTabs[activeInfo.tabId] = Date.now();
+  }
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-  if (changeInfo.status === 'complete') {
+  if (changeInfo.status === 'complete' && !activeTabs[tabId]) {
     activeTabs[tabId] = Date.now();
   }
 });
@@ -16,7 +18,10 @@ chrome.tabs.onRemoved.addListener(tabId => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'getTime' && sender.tab) {
-    const startTime = activeTabs[sender.tab.id] || Date.now();
+    if (!activeTabs[sender.tab.id]) {
+      activeTabs[sender.tab.id] = Date.now();
+    }
+    const startTime = activeTabs[sender.tab.id];
     sendResponse({ timeSpent: Date.now() - startTime });
   }
   

@@ -12,12 +12,13 @@ function checkAndApplyFriction() {
       if (chrome.runtime.lastError || !response || typeof response.timeSpent === 'undefined') return;
 
       const timeSpent = response.timeSpent;
+      const rootElement = document.documentElement;
 
       FRICTION_LEVELS.forEach(level => {
         if (timeSpent >= level.time) {
-          document.body.classList.add(level.className);
+          rootElement.classList.add(level.className);
         } else {
-          document.body.classList.remove(level.className);
+          rootElement.classList.remove(level.className);
         }
       });
     });
@@ -30,4 +31,4 @@ function init() {
   intervalId = setInterval(checkAndApplyFriction, 5000);
 }
 
-init();
+init(); 
